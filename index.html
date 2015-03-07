@@ -6,14 +6,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WebApp - jQuery</title>
+        <title>AMFF Test</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="public/css/main.min.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/parsley.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,151 +24,54 @@
         <!-- Add your site or application content here -->
         <header>
               <div class="layout-wrap clearfix">
-                <a href="#">netcraft<img src="img/logo_netcraft.svg" alt="netcraft"></a>
 
-                <form class="search-box" method="get" action="http://www.google.com">
-                    <input type="search" name="q" placeholder="search">
-                </form>
               </div>
         </header>
         <div class="bground clearfix">
-            <div class="page-body layout-wrap clearfix">
-                <div class="notifications" id="notification">wannabe dynamic
-                </div>
-                <nav id="navigation" role="navigation"></nav>
-
-                <script id="nav-sections" type="text/template">
-                    {{#each this}}
-                        <div class="nav-section sec{{@index}}"  tabindex="0" aria-describedby="nav-{{@index}}">
-                            <p class="psection">{{{label}}}</p>
-                            <div class="menu" role="menubar">
-                                <div class="menu-hint" id="menu-hint-{{@index}}">
-                                    <p>{{actionsLabel}}</p>
-                                    <div class="arrow"></div>
-                                </div>
-
-                                <ul class="action-list" aria-describedby="menu-hint-{{@index}}">
-                                {{#each actions}}
-                                    <li role="menuitem"><a href={{url}} tabindex="0" target="_blank">{{label}}</a></li>
-                                {{/each}}
-                                </ul>
-                            </div>
-                        </div>
-                    {{/each}}
-                </script>
-
-
-                <div class="tabs" role="tablist">
-                    <ul class="tab-hdrs clearfix justify">
-                        <li><a role="tab" tabIndex="0" href="#quick-reports"><i class="fa fa-external-link"></i>Quick Reports</a>
-                        </li>
-                        <li><a role="tab" tabIndex="0" href="#fmy-folders"><i class="fa fa-star-o"></i>My Folders</a>
-                        </li>
-                        <li><a role="tab" tabIndex="0" href="#my-team-folders"><i class="fa fa-folder-open-o"></i>My Team Folders</a>
-                        </li>
-                        <li><a role="tab" tabIndex="0" href="#public-folders"><i class="fa fa-file-o"></i>Public Folders</a>
-                        </li>
-                    </ul>
-                    <div id="quick-reports" class="tab-content active" role="tabpanel">
-                        <div class="tab-content-header clearfix">
-                            <select class="choose-report quick-reports" name="choose-report" id="choose-report-selectQ"></select>
-                            <a class="action-btn expand1" href="">expand</a>
-                            <a class="action-btn settingsQ" href="">settings</a>
-                        </div>
-                        <div class="content-reportsQ activeRep">
-                            <form class="reports" id="form">
-                                <fieldset class="report-row">
-                                    <span>Report 01</span>
-                                    <label for="name1">Name:</label>
-                                    <input type="text" name="site-name1" id="name1"
-                                    class="site-nameQ" placeholder ="Site name" required="required" >
-                                    <label for="url1" class="site-url">URL:</label>
-                                    <input type="url" name="url1" id="url1" placeholder ="Site URL"
-                                    required="required" >
-                                </fieldset>
-
-                                <fieldset class="report-row">
-                                    <span>Report 02</span>
-                                    <label for="name2">Name:</label>
-                                    <input type="text" name="site-name2" id="name2"
-                                    class="site-name" placeholder ="Site name">
-                                    <label for="url2" class="site-url">URL:</label>
-                                    <input type="url" name="url2" id="url2" placeholder ="Site URL">
-                                </fieldset>
-
-                                <fieldset class="report-row">
-                                    <span>Report 03</span>
-                                    <label for="name3">Name:</label>
-                                    <input type="text" name="site-name3" id="name3"
-                                    class="site-name" placeholder ="Site name">
-                                    <label for="url3" class="site-url">URL:</label>
-                                    <input type="url" name="url3" id="url3" placeholder ="Site URL">
-                                </fieldset>
-                                <span class='system-message'></span>
-                                <button type="submit" class="submit_btnQ">Save</button>
-                                <button type="button" class="cancel_btnQ">Cancel</button>
-                            </form>
-                        </div>
-                        <iframe id="tabQ" src="" frameborder="0"></iframe>
-                    </div>
-                    <div id="fmy-folders" class="tab-content" role="tabpanel">
-                        <a class="action-btn expand2" href="">expand</a>
-                        <iframe id="tab2" src="http://www.thelibrary.co.il/current-teams.html" frameborder="0"></iframe>
-                    </div>
-                    <div id="my-team-folders" class="tab-content" role="tabpanel">
-                        <div class="tab-content-header clearfix">
-                            <select class="choose-report my-team-folders" name="choose-report" id="choose-report-selectM"></select>
-                            <a class="action-btn expand3" href="">expand</a>
-                            <a class="action-btn settingsM" href="">settings</a>
-                        </div>
-                        <div class="content-reportsM">
-                            <form class="reports" id="form">
-                                <fieldset class="report-row">
-                                    <span>Report 01</span>
-                                    <label for="name1">Name:</label>
-                                    <input type="text" name="site-name1" id="name1"
-                                    class="site-nameM" placeholder ="Site name" required="required" >
-                                    <label for="url1" class="site-url">URL:</label>
-                                    <input type="url" name="url1" id="url1"
-                                    placeholder ="Site URL" required="required" >
-                                </fieldset>
-
-                                <fieldset class="report-row">
-                                    <span>Report 02</span>
-                                    <label for="name2">Name:</label>
-                                    <input type="text" name="site-name2" id="name2"
-                                    placeholder ="Site name" class="site-name">
-                                    <label for="url2" class="site-url">URL:</label>
-                                    <input type="url" name="url2" placeholder ="Site URL" id="url2">
-                                </fieldset>
-
-                                <fieldset class="report-row">
-                                    <span>Report 03</span>
-                                    <label for="name3">Name:</label>
-                                    <input type="text" name="site-name3" id="name3"
-                                    placeholder ="Site name" class="site-name">
-                                    <label for="url3" class="site-url">URL:</label>
-                                    <input type="url" name="url3" placeholder ="Site URL" id="url3">
-                                </fieldset>
-
-                                <span class='system-message'></span>
-                                <button type="submit" class="submit_btnM">Save</button>
-                                <button type="button" class="cancel_btnM">Cancel</button>
-                            </form>
-                        </div>
-                        <iframe id="tabM" src="" frameborder="0"></iframe>
-                    </div>
-                    <div id="public-folders" class="tab-content" role="tabpanel">
-                        <a class="action-btn expand4" href="">expand</a>
-                        <iframe id="tab4" src="http://paulgraham.com/articles.html" frameborder="0"></iframe>
+            <div class="page-body layout-wrap container-fluid clearfix">
+                <h1>THE COMPLETE GUIDE</h1>
+                <h2>Success Made <span>Easy</span></h2>
+                <div class="line col-md-3 clearfix">
+                    <div class="box">
+                        <h3>LOREM IPSUM?</h3>
+                        <p><span>Lorem ipsum dolor sit amet, consectetur </span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <ol class="custom-counter">
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Excepteur sint occaecat cupidatat</li>
+                        </ol>
                     </div>
                 </div>
+                <div class="line col-md-3 lineR jsDef clearfix">
+                    <div class="box rBox">
+                        <h3 class="rBoxH3">LOREM IPSUM DOLOR<br><span>CONSECTETUR ADIPISCING</span></h3>
+                        <form id="form" method="post">
+
+                            <label for="name">Name<span>*</span></label>
+                            <input type="text" name="name" required />
+                            <label for="email">E-mail<span>*</span></label>
+                            <input type="email" name="email" data-parsley-trigger="change" required />
+                            <label for="phonenumber">Phone Number<span>*</span></label>
+                            <input type="tel" name="phonenumber" data-parsley-trigger="change" required/>
+
+                            <input class="btn btn-default" type="submit" value="GET THE GUIDE" />
+                        </form>
+                    </div>
+                </div>
+                <div class="line col-md-3 lineR jsReq clearfix">
+                    <div class="box rBox">
+                        <h3 class="rBoxH3 jsRes"></h3>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <!-- <script src="js/plugins.js"></script> -->
-        <script src="vendor/handlebars-v2.0.0.js"></script>
-        <script src="public/js/main.min.js"></script>
+        <footer>
+            <p class="layout-wrap">2015 All Rights Reserved. Company Name.</p>
+        </footer>
+        <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"><\/script>')</script>
+        <script src="vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
